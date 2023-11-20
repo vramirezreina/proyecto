@@ -1,0 +1,54 @@
+.header {
+    position: fixed;
+    z-index: 1000;
+    background-color: #f9fdff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    width: 100%;
+    top: 0; /* Añadido para fijar la barra en la parte superior */
+}
+
+
+.header .logo{
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.header .logo img{
+    height: 70px;
+    width: 100%;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.header .logo img:hover{
+    transform: scale(1.2);
+}
+
+.header .nav-links{
+    list-style: none;
+}
+
+.header .nav-links li{
+    display: inline-block;
+    padding: 0 20px;    
+}
+
+.header .nav-links li:hover,
+/**/.overlay a:hover{
+    transform: scale(1.1);
+}
+
+.header .nav-links a{
+    font-size: 900;
+    color: #000000; 
+    font-weight: 700;
+}
+
+.header .nav-links a:hover{
+    border-radius: 15px;
+    background-color:  #ec7c1cff;
+    padding: 10px;
+}

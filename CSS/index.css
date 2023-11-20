@@ -12,7 +12,6 @@ body{
     background-color: #f9f9f9;
     min-width: 400px;
 }
-
 .header {
     position: fixed;
     z-index: 1000;
@@ -165,28 +164,7 @@ body{
         right: 35px;
     }
 }
-.float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-    font-size: 37px;
-	box-shadow: 2px 2px 3px #999;
-}
-.float:hover {
-	text-decoration: none;
-	color: #25d366;
-    background-color:#fff;
-}
 
-.fa-whatsapp{
-	margin-top:15px;
-}
 /*Video de inicio*/
 .video{
     padding-top: 260px;
@@ -415,45 +393,6 @@ h1 {
     margin: 0;
     padding: 10px;
 }
-#whatsapp .float{
-    position: fixed;
-    transform: all .5s ease;
-    background-color: #25d366;
-    display: block;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 50px;
-    border-right: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 30px;
-    bottom: 70px;
-    left: 20px;
-    border: 0;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-}
-#whatsapp .float::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top:50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    -webkit-animation: pulse-border 1500ms ease-out infinite;
-    animation: pulse 1500ms ease-out infinite;
-}
-#whatsapp .float:focus{
-    border: none;
-    outline: none;
-}
 /*footer*/
 footer {
     margin-top: 60px;
@@ -510,7 +449,7 @@ footer {
     justify-content: center;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    background-color: rgba(0, 128, 255, 0.5);
+    background-color: #ec7c1cff;
 
 }
 
@@ -550,7 +489,7 @@ footer {
 
 .caja__trasera button:hover{
     background: #fff;
-    color: #46A2FD;
+    color: #2419a9f8;
 }
 
 /*Formularios*/
@@ -580,7 +519,7 @@ footer {
     font-size: 30px;
     text-align: center;
     margin-bottom: 20px;
-    color: #46A2FD;
+    color: #2419a9f8;
 }
 
 .contenedor__login-register form input{
@@ -598,7 +537,7 @@ footer {
     margin-top: 40px;
     border: none;
     font-size: 14px;
-    background: #46A2FD;
+    background: #2419a9f8;
     font-weight: 600;
     cursor: pointer;
     color: white;
@@ -644,4 +583,3 @@ footer {
         position: relative;
     }
 }
-

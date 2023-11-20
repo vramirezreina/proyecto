@@ -1,270 +1,136 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
-
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+ /*Servicios */
+.servicios {
     font-family: 'Nunito', sans-serif;
-    font-size: 20px;
-}
-
-body{
-    background-color: #f9f9f9;
-    min-width: 400px;
-}
-
-.header {
-    position: fixed;
-    z-index: 1000;
-    background-color: #f9fdff;
+    margin-top: 95px;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 85px;
-    width: 100%;
-    top: 0; /* Añadido para fijar la barra en la parte superior */
-}
-
-
-.header .logo{
-    cursor: pointer;
-    margin-right: auto;
-}
-
-.header .logo img{
-    height: 70px;
-    width: 100%;
-    transition: all 0.3s;
-    margin-top: 10px;
-}
-
-.header .logo img:hover{
-    transform: scale(1.2);
-}
-
-.header .nav-links{
-    list-style: none;
-}
-
-.header .nav-links li{
-    display: inline-block;
-    padding: 0 20px;    
-}
-
-.header .nav-links li:hover,
-/**/.overlay a:hover{
-    transform: scale(1.1);
-}
-
-.header .nav-links a{
-    font-size: 900;
-    color: #000000; 
-    font-weight: 700;
-}
-
-.header .nav-links a:hover{
-    border-radius: 15px;
-    background-color:  #ec7c1cff;
+    justify-content: center;
+    background-color: #2419a9f8;
+    color: #fff;
     padding: 10px;
 }
 
-.fa-solid .fa{
-    color: #2419a9f8;
-    font-size: 30px;
-    padding: 5px;
-}
-
-/**/.menu {
-    display:none;
-}
-
-.header .btn button,
-/**/.header .menu button{
-    margin-left: 20px;
-    font-weight: 700;
-    color: #000000;
-    padding: 9px 25px;
-    background: #98d404ff;
-    border: none;
-    border-radius: 50px;
+.tab1 {
     cursor: pointer;
-    transition: all 0.3s ease 0s;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #fff;
+    border-radius: 5px;
 }
 
-.header .btn button:hover,
-/**/.header .menu button:hover{
-    background-color: #ffffff;
-    background-color:  #ec7c1cff;
-    transform: scale(1.1);
+.tab1.active {
+    background-color: #fff;
+    color: #333;
 }
 
-
-/**/@media screen and (max-width: 800px){
-    .nav-links, .btn {
-        display: none;
-    }
-    .menu {
-        display: inherit;
-    }
-}
-/*Nav Mobile*/
-
-.header a{
-    text-decoration: none;  
-    /*borramos el que teniamos en .header .nav-links a*/ 
-}
-
-.header .overlay {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.95);
-    overflow: hidden;
-    transition: all 0.3s ease 0s;
-}
-
-.header .overlay .overlay-content{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;    
-}
-
-.header .overlay a{
-    padding: 15px;
-    font-size: 36px;
-    display: block;
-    transition: all 0.3s ease 0s;
-    font-weight: 700;
-    color: #98d404ff;
-}
-
-.header .overlay a:hover, 
-.header .overlay a:focus{
-    background-color:  #ec7c1cff;
-}
-
-.header .overlay .close{
-    position: absolute;
-    top: 20px;
-    right: 45px;
-    font-size: 65px;
-}
-
-@media screen and (max-height:450px) {
-    .header .overlay a{
-        font-size: 20px;
-    }
-    .header .overlay .close{
-        font-size: 40px;
-        top: 15px;
-        right: 35px;
-    }
-}
-#whatsapp .float{
-    position: fixed;
-    transform: all .5s ease;
-    background-color: #25d366;
-    display: block;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0,0,0,0.15);
-    border-radius: 50px;
-    border-right: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 30px;
-    bottom: 70px;
-    left: 20px;
-    border: 0;
-    z-index: 9999;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-}
-#whatsapp .float::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    left: 50%;
-    top:50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background-color: #25d366;
-    border-radius: 50%;
-    -webkit-animation: pulse-border 1500ms ease-out infinite;
-    animation: pulse 1500ms ease-out infinite;
-}
-#whatsapp .float:focus{
-    border: none;
-    outline: none;
-}
-.content{
-    margin: auto;
-    margin-top: 100px;
-    text-align: justify;
+.content2 {
+    background-color: #fff;
+    color: #333;
     padding: 20px;
-    background-color: rgb(235, 232, 235);
-    width: 60%;
-    border-radius: 45px;
-    color: rgb(0, 0, 0);
-}
-.content h1{
-    text-align: center;
-    font-size: 30px;
-    font-weight: 400;
+    margin: 10px;
+    border-radius: 5px;
 }
 
-@media (min-width: 768px) {
-    .slider {
-        flex-direction: row;
+.tab-content2 {
+    display: none;
+}
+
+.tab-content2.active {
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .servicios {
+        flex-direction: column;
+        align-items: center;
     }
-    .tab {
-        margin: 0 10px;
+
+    .tab1 {
+        width: 100%;
     }
 }
-/*footer*/
-footer {
-    margin-top: 60px;
-    background: linear-gradient(to right, #25d366, #ec7c1cff, #2419a9f8);
-    color: #fff;
-    padding: 10px 0;
-}
+/* Electricidad */
 
-.footer-content {
-    text-align: center;
-}
-
-.footer-content h3 {
-    font-size: 24px;
-}
-
-.footer-content p {
-    font-size: 16px;
-}
-
-.socials {
-    list-style: none;
-    padding: 0;
-    display: flex;
+.container {
     justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.socials li {
-    margin: 0 10px;
+.card {
+    position: relative;
+    height: 500px;
+    margin: 15px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
 }
 
-.socials a {
-    text-decoration: none;
-    color: #fff;
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    transition: .5s;
 }
 
-.footer-bottom {
-    text-align: center;
-    padding: 10px 0;
+.intro {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    background: rgba(27, 27, 27, 0.8);
+    color: white;
+    transition: .5s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 10px;
+    color: white;
+    position: absolute;
+    top: 5px; 
+    left: 20px;
+   
+}
+
+p {
+    font-size: 16px; 
+    margin: 10px;
+    visibility: hidden;
+    text-align: justify;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2; 
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .intro {
+    opacity: 1;
+}
+
+.card:hover p {
+    visibility: visible;
+}
+
+.card:hover img {
+    transform: scale(1.1) rotate(-3deg);
+}
+
+/* Media Query para hacerlo responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
 }

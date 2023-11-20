@@ -2,45 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Inicio</title>
-    <link rel="stylesheet" href="../CSS/index.css">
 </head>
 <body>
-<header class="header">
-        <div class="logo">
-<!---->            <img src="../img/logo.png" alt="Logo de la marca">
-        </div>
-        <nav>
-           <ul class="nav-links">
-                <li><a href="../PHP/index.php">Inicio</a></li>
-                <li><a href="/PHP/servicios.html">Servicios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Proyectos</a></li>
-           </ul>            
-        </nav>
-      
-        <a href="../PHP/login.php"><i class="fas fa-user"></i></a>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <a class="btn" href="#"><button>Contacto</button></a>
-        
-
-<!---->        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
-
-<!---->        <div id="mobile-menu" class="overlay">
-<!---->            <a onclick="closeNav()" href="" class="close">&times;</a>
-<!---->            <div class="overlay-content">
-<!---->                <a href="../PHP/index.html">Inicio</a>
-<!---->                <a href="/PHP/servicios.html">Servicios</a>
-<!---->                <a href="#">Productos</a>
-<!---->                <a href="#">Proyectos</a>
-                       <a href="#">Contacto</a>
-<!---->            </div>
-<!---->        </div>
-
-    </header>
+    <?php
+    include '../vistas/encabezado.php';
+    ?>
     <div class="contenerdor_video">
         <div class="video">
             <h1>¡Bienvenidos a Soluciones Electricas RYR!</h1>
@@ -70,14 +38,14 @@
     <div style="margin-left: 80px; width: 80%; height: 3px; background-color: #25d366; box-shadow: 0px 0px 5px #25d366;"></div>
     <div class="tarjetas-container">
         <div class="tarjeta">
-            <img src="../img/inicio/img1.jpeg" alt="Imagen de la tarjeta">
+            <img src="../img/imagen1.jpg" alt="Imagen de la tarjeta">
             <div class="contenido">
                 <h1>ELECTRICIDAD</h1>
                 <a href="servicios.html">Ver servicios</a>
             </div>
         </div>
         <div class="tarjeta">
-            <img src="../img/inicio/Mantenimiento.jpg" alt="Imagen de la tarjeta">
+            <img src="../img/imagen2.jpeg" alt="Imagen de la tarjeta">
             <div class="contenido">
                 <h1>AUTOMATIZACIÓN</h1>
                 <a href="servicios.html">Ver servicios</a>
@@ -108,29 +76,15 @@
 
             </div>
     </div>
-
-    <div id="whatsapp">
-        <a href="https://wa.link/54c9fc" class="float" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
+    <br><br>
+    <h1>Ubicación</h1><br>
+    <div style="margin-left: 80px; width: 80%; height: 3px; background-color: #25d366; box-shadow: 0px 0px 5px #25d366;"></div>
+    <div class="container" style="width:100%;">
+    <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=520&amp;height=400&amp;hl=en&amp;q=%20Neiva+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href='https://maps-generator.com/'></a>
     </div>
-
-
-    <footer>
-        <div class="footer-content">
-            <h3>Soluciones Electricas RYR</h3>
-            <p></p>
-            <ul class="socials">
-                <li><a href="https://www.facebook.com/profile.php?id=100089651291792" target="_blank"><i class="fa-brands fa-facebook"></i></i></a></li>
-            </ul>
-        </div>
-        <div class="footer-bottom">
-            <p>Copyright &copy;2023 Soluciones Electricas RYR</p>
-        </div>
-    </footer>
-
+    <?php
+    include '../vistas/footer.php';
+    ?>
     <script src="../JS/index.js"></script>
-
-    
 </body>
 </html>

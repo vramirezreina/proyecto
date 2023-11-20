@@ -6,49 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <title>Inicio</title>
     <link rel="stylesheet" href="../CSS/index.css">
+    <title>Inicio</title>
+    
 </head>
 <body>
-<header class="header">
-        <div class="logo">
-<!---->            <img src="../img/logo.png" alt="Logo de la marca">
-        </div>
-        <nav>
-           <ul class="nav-links">
-                <li><a href="../PHP/index.php">Inicio</a></li>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Productos</a></li>
-                <li><a href="#">Proyectos</a></li>
-           </ul>            
-        </nav>
-      
-        <a href="../PHP/login.php"><i class="fas fa-user"></i></a>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <a class="btn" href="#"><button>Contacto</button></a>
-        
-
-<!---->        <a onclick="openNav()" class="menu" href="#"><button>Menu</button></a>
-
-<!---->        <div id="mobile-menu" class="overlay">
-<!---->            <a onclick="closeNav()" href="" class="close">&times;</a>
-<!---->            <div class="overlay-content">
-<!---->                <a href="../PHP/index.php">Inicio</a>
-<!---->                <a href="#">Servicios</a>
-<!---->                <a href="#">Productos</a>
-<!---->                <a href="#">Proyectos</a>
-                       <a href="#">Contacto</a>
-<!---->            </div>
-<!---->        </div>
-
-    </header>
-    
-   
-    <a href="https://wa.link/54c9fc" class="float" target="_blank">
-        <i class="fa fa-whatsapp my-float"></i>
-       
-    </a>
-    
+<?php
+   include '../vistas/encabezado.php';
+   ?>    
     <main>
 
 <div class="contenedor__todo">
@@ -71,13 +36,30 @@
         <form action="login_usuario_be.php" method="POST" class="formulario__login">
             <h2>Iniciar Sesión</h2>
             <div class="ub1"></div>
-                <select name="rol">
-                <option value="0" style="display:none;"><label>Seleccionar Rol</label></option>
-                <option value="Usuario">Usuario</option>
-                <option value="Admin">Administrador</option>
+            <div class="form-floating">
+                <select class="form-select" name="idRol" aria-label="Floating label select example">
+                    <option selected >Tipo Usuario</option>
+                    <?php  
+                        include './conexion_be.php';
+                        
+                        $sql = "SELECT rol FROM rol";
+                        $resultado = $conexion->query($sql);
+                        if ($resultado) {
+                            while ($fila = $resultado->fetch_assoc()) {
+                                echo '<option value="' . $fila["rol"] . '">' . $fila["rol"] . '</option>';
+                            }
+                            $resultado->free(); // Liberar el conjunto de resultados
+                        } else {
+                            echo "Error: " . $sql . "<br>" . $conexion->error;
+                        }
+                    
+                        // Cerrar la conexión
+                        $conexion->close();
+                        ?>
                 </select>
-            <input type="text" placeholder="Correo Electronico" name="correo">
-            <input type="password" placeholder="Contraseña" name="clave" id="txtpassword">
+            </div>
+            <input type="text" placeholder="Usuario" name="usuario" required >
+            <input type="password" placeholder="Contraseña" name="clave" id="txtpassword" required>
 
             <button>Entrar</button>
         </form>
@@ -85,16 +67,36 @@
         <!--Register-->
         <form action="registro_usuario_be.php" method="POST" class="formulario__register">
             <h2>Regístrarse</h2>
-            <input type="text" placeholder="Nombre completo" name="nombre_completo">
-            <input type="text" placeholder="Correo Electronico" name="correo">
-            <div class="ub1"></div>
-                <select name="rol">
-                <option value="0" style="display:none;"><label>Seleccionar Rol</label></option>
-                <option value="Usuario">Usuario</option>
-                <option value="Admin">Administrador</option>
+            <input type="text" placeholder="Nombre completo" name="nombre_completo" required>
+            <input type="text" placeholder="Correo Electronico" name="correo" required>
+            <div class="form-floating"><br>
+                <select class="form-select" name="idRol" required>
+                    <option selected>Tipo Usuario</option>
+                    <?php
+                    include './conexion_be.php';
+
+                    $sql = "SELECT rol, rol FROM rol WHERE rol != 'ADMIN'";
+                    $resultado = $conexion->query($sql);
+
+                    if ($resultado) {
+                        while ($fila = $resultado->fetch_assoc()) {
+                            echo '<option value="' . $fila["rol"] . '">' . $fila["rol"] . '</option>';
+                        }
+
+                        // Liberar el conjunto de resultados
+                        $resultado->free();
+                    } else {
+                        echo "Error: " . $sql . "<br>" . $conexion->error;
+                    }
+
+                    // Cerrar la conexión
+                    $conexion->close();
+                    ?>
+
                 </select>
-            <input type="text" placeholder="Usuario" name="usuario">
-            <input type="password" placeholder="Contraseña" name="clave">
+            </div>
+            <input type="text" placeholder="Usuario" name="usuario" required>
+            <input type="password" placeholder="Contraseña" name="clave" required>
             <button>Regístrarse</button>
         </form>
     </div>
@@ -114,7 +116,6 @@
         }
 
     </script>
-    <script src= "../JS/script_login.js"></script>
-
+    <script src= "../JS/login.js"></script>
 </body>
 </html>

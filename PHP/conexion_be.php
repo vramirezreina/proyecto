@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost", "root", "", "registrar");
+$conexion = mysqli_connect("localhost", "root", "", "soluciones_electricas");
     /*
     if($conexion){
         echo 'Conectado exitosamenente a la base de datos';
